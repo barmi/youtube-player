@@ -1,0 +1,23 @@
+#container {
+    width:100%;
+    text-align:center;
+}
+
+#left {
+    float:left;
+    width:100px;
+    /* background: #ff0000; */
+}
+
+#center {
+    display: inline-block;
+    margin:0 auto;
+    width:640px;
+    /* background: #00ff00; */
+}
+
+#right {
+    float:right;
+    width:0px;
+    /* background: #0000ff; */
+}

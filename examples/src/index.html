@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src='/youtube-player.js'></script>
+    <link href="base.css" rel="stylesheet">
+
+<script>
+    var player1;
+
+    function play(id)
+    {
+        if (typeof player1 !== "undefined")
+        {
+            player1.stopVideo();
+            player1.loadVideoById(id);
+            player1.playVideo();
+        }
+        else
+        {
+            player1 = YouTubePlayer('player-1', {
+                videoId: id
+            });
+            player1
+                .playVideo()
+                .then(function () {
+                    console.log('Starting to play player1. It will take some time to buffer video before it starts playing.');
+                });
+        }
+    }
+</script>
+
+</head>
+<body>
+    <div id="container">
+    <div id="left">
+        <a href="#" onClick="play('WS0LGPUiZEw');return 0;">p1</a><br />
+        <a href="#" onClick="play('FFpfNNXlv9c');return 0;">p2</a><br />
+        <a href="#" onClick="play('9ZpwOfKmYk8');return 0;">연합뉴스</a><br />
+    </div>
+    <div id="center">
+    <div id="player-1"></div>
+
+    <!--script>
+    var player1,
+        firstStateChange;
+
+    player1 = YouTubePlayer('player-1', {
+        videoId: 'aR8Fe1lTKHo',
+	width: '1024',
+	height: '768'
+//'M7lc1UVf-VE'
+    });
+
+    player1
+        // Play video is a Promise.
+        // 'playVideo' is queued and will execute as soon as player is ready.
+        .playVideo()
+        .then(function () {
+            console.log('Starting to play player1. It will take some time to buffer video before it starts playing.');
+        });
+        
+    function play(id)
+    {
+        player1 = YouTubePlayer('player-1', {
+                videoId: id
+            width: '1024',
+            height: '768'
+        //'M7lc1UVf-VE'
+            });
+        player1.playVideo();
+    }
+    </script -->
+    </div>
+    </div>
+</body>
+</html>
