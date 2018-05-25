@@ -2,7 +2,11 @@
 <html>
 <head>
     <script src='/youtube-player.js'></script>
+    <script src='tree.js'></script>
+    <script src='treeitem.js'></script>
+    <script src='treeitemClick.js'></script>
     <link href="base.css" rel="stylesheet">
+    <link href="tree.css" rel="stylesheet">
 
 <script>
     var player1;
@@ -33,9 +37,57 @@
 <body>
     <div id="container">
     <div id="left">
+        <!--
         <a href="#" onClick="play('WS0LGPUiZEw');return 0;">p1</a><br />
         <a href="#" onClick="play('FFpfNNXlv9c');return 0;">p2</a><br />
         <a href="#" onClick="play('9ZpwOfKmYk8');return 0;">연합뉴스</a><br />
+        -->
+        <h3 id="tree_label">TV채널</h3>
+        <ul role="tree" aria-labelledby="tree_label">
+            <li role="treeitem" aria-expanded="false">
+                <span>엄마</span>
+                <ul role="group">
+                    <li role="treeitem" class="doc"><a href="#" onClick="play('9ZpwOfKmYk8');return 0;">연합뉴스</a></li>
+                </ul>
+                <ul role="group">
+                    <li role="treeitem" class="doc"><a href="#" onClick="play('aR8Fe1lTKHo');return 0;">YTN</a></li>
+                </ul>
+                <ul role="group">
+                    <li role="treeitem" class="doc"><a href="#" onClick="play('Yr310CPEqdY');return 0;">JTBC</a></li>
+                </ul>
+                <ul role="group">
+                    <li role="treeitem" class="doc"><a href="#" onClick="play('A9K-7AVG2i4');return 0;">KBS News</a></li>
+                </ul>
+            </li>
+            <li role="treeitem" aria-expanded="false">
+                <span>아빠</span>
+                <ul role="group">
+                    <li role="treeitem" class="doc"><a href="#" onClick="play('0qFtcB-J2KM');return 0;">세바시-로봇</a></li>
+                </ul>
+                <ul role="group">
+                    <li role="treeitem" class="doc"><a href="#" onClick="play('DJE5iM8XPIc');return 0;">알파고2017</a></li>
+                </ul>
+            </li>
+            <li role="treeitem" aria-expanded="false">
+                <span>내꺼</span>
+                <ul role="group">
+                    <li role="treeitem" class="doc"><a href="#" onClick="play('5adPj5tjvOw');return 0;">위베어베어스-할로윈</a></li>
+                </ul>
+                <ul role="group">
+                    <li role="treeitem" class="doc"><a href="#" onClick="play('i9Scu-UdNcM');return 0;">어드벤처타임-1</a></li>
+                </ul>
+            </li>
+            <li role="treeitem" aria-expanded="false">
+                <span>동생</span>
+                <ul role="group">
+                    <li role="treeitem" class="doc"><a href="#" onClick="play('WS0LGPUiZEw');return 0;">뽀로로1</a></li>
+                </ul>
+                <ul role="group">
+                    <li role="treeitem" class="doc"><a href="#" onClick="play('FFpfNNXlv9c');return 0;">뽀로로2</a></li>
+                </ul>
+            </li>
+        </ul>
+        <p><label>선택채널: <input id="last_action" type="text" size="15" readonly></label></p>
     </div>
     <div id="center">
     <div id="player-1"></div>
